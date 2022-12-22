@@ -1,0 +1,248 @@
+@font-face { font-family: AncientGreek; src: url('fonts/ancientgreek.ttf'); }
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    content-align: center;
+    line-height: 1.15;
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/mushroomisland4.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-white-space: pre-line;
+}
+
+h1#pageTitle {
+    left: 0;
+    line-height: 200px;
+    margin-top: -100px;
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    width: 98%;
+    font-size: 192px;
+    font-family: AncientGreek, sans-serif;
+}
+
+.wrapper-buttons {
+    left: 0;
+    line-height: 200px;
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    margin: 0 auto !important;
+    width: 98%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: block;
+}
+
+.wrapper-buttons > * {
+    margin-bottom: 10px;
+}
+
+.wrapper-buttons > *:first-child {
+    margin-top: 10px;
+}
+
+.wrapper-buttons > *:last-child {
+    margin-bottom: 0;
+    margin-left: 48px;
+}
+
+.white-button,
+.blue-button {
+    display: inline-block;
+    font-family: Whitney, "Open Sans", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 16pt;
+    border-radius: 3px;
+    cursor: pointer;
+    height: 45px;
+    width: 250px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.blue-button {
+    background-color: #7289da;
+    border: 2px solid #7289da;
+    color: #fff;
+}
+
+.white-button {
+    background-color: #fff;
+    border: 2px solid #fff;
+    color: #000;
+}
+
+.blue-button:hover,
+.white-button:hover{
+    transform: translateY(1px);
+}
+
+.blue-button:active,
+.white-button:active {
+    transform: translateY(2px);
+}
+
+.blue-button,
+.white-button {
+    outline: transparent !important;
+}
+
+/*
+PURE RESPONSIVE CSS3 SLIDESHOW GALLERY by Roko C. buljan
+http://stackoverflow.com/a/34696029/383904
+*/
+
+.slideshow {
+    position: relative;
+    overflow: hidden;
+    height: 100%; /* Or set a fixed height */
+}
+
+/* SLIDER */
+
+.slideshow .slider {
+    height: 100%;
+    white-space: nowrap;
+    font-size: 0;
+    transition: 1s;
+}
+
+/* SLIDES */
+
+.slideshow .slider > * {
+    font-size: 1rem;
+    display: inline-block;
+    white-space: normal;
+    vertical-align: top;
+    height: 100%;
+    width: 100%;
+    background: none 50% no-repeat;
+    background-size: cover;
+}
+
+/* PREV/NEXT, CONTAINERS & ANCHORS */
+
+.slideshow .prevNext {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    width: 100%;
+    height: 0;
+}
+
+.slideshow .prevNext > div+div {
+    visibility: hidden; /* Hide all but first P/N container */
+}
+
+.slideshow .prevNext a {
+    background: #fff;
+    position: absolute;
+    width:       30px;
+    height:      30px;
+    line-height: 30px; /* If you want to place numbers */
+    text-align: center;
+    opacity: 0.5;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 0;
+}
+.slideshow .prevNext a:hover {
+    opacity: 1;
+}
+.slideshow .prevNext a+a {
+    left: auto;
+    right: 0;
+}
+
+/* NAVIGATION */
+
+.slideshow .bullets {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    padding: 10px 0;
+    width: 98%;
+    text-align: center;
+}
+.slideshow .bullets > a {
+    display: inline-block;
+    width:       30px;
+    height:      30px;
+    line-height: 30px;
+    text-decoration: none;
+    text-align: center;
+    background: rgba(255, 255, 255, 1);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+.slideshow .bullets > a+a {
+    background: rgba(255, 255, 255, 0.5); /* Dim all but first */
+}
+.slideshow .bullets > a:hover {
+    background: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* NAVIGATION BUTTONS */
+/* ALL: */
+.slideshow >s:target ~ .bullets >* {      background: rgba(255, 255, 255, 0.5);}
+/* ACTIVE */
+#s1:target ~ .bullets >*:nth-child(1) {background: rgba(255, 255, 255,   1);}
+#s2:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
+#s3:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
+#s4:target ~ .bullets >*:nth-child(4) {background: rgba(255, 255, 255,   1);}
+/* More slides? Add here more rules */
+
+/* PREV/NEXT CONTAINERS VISIBILITY */
+/* ALL: */
+.slideshow >s:target ~ .prevNext >* {      visibility: hidden;}
+/* ACTIVE: */
+#s1:target ~ .prevNext >*:nth-child(1) {visibility: visible;}
+#s2:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
+#s3:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
+#s4:target ~ .prevNext >*:nth-child(4) {visibility: visible;}
+/* More slides? Add here more rules */
+
+/* SLIDER ANIMATION POSITIONS */
+
+#s1:target ~ .slider {transform: translateX(   0%); -webkit-transform: translateX(   0%);}
+#s2:target ~ .slider {transform: translateX(-100%); -webkit-transform: translateX(-100%);}
+#s3:target ~ .slider {transform: translateX(-200%); -webkit-transform: translateX(-200%);}
+#s4:target ~ .slider {transform: translateX(-300%); -webkit-transform: translateX(-300%);}
+/* More slides? Add here more rules */
+
+
+/* YOU'RE THE DESIGNER!
+   ____________________
+   All above was mainly to get it working :)
+   slideshow CUSTOM STYLES / OVERRIDES HERE: */
+
+.slideshow{
+    color: #fff;
+    text-align: center;
+}
+.slideshow .slider h2 {
+    margin-top: 40vh;
+    font-weight: 200;
+    letter-spacing: -0.06em;
+    word-spacing: 0.2em;
+    font-size: 3em;
+}
+.slideshow a {
+    border-radius: 50%;
+    margin: 0 3px;
+    color: rgba(0,0,0,0.8);
+    text-decoration: none;
+}
